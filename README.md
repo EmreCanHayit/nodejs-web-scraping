@@ -194,3 +194,6 @@ Bazı verilerin bu şekilde kötü işlenmiş olarak gelmesinin sebebi web site 
 Her kaynağı istediğimiz şekile dönüştürerek, kullanılabilir kaynağa dönüştürmek kazımanın asıl gücü. Size gelen veri ne kadar kötü ve kullanılmaz gibi gözüksede ``örnek 2`` üzerinde oynalamar yaparak işe yarar hale getirebilirsiniz.
 
 Bu makale üzerinde api desteği olmayan servisler ve web siteleri üzerine yoğunlaşarak kullanılabilir servisler elde etmeye çalıştık ve bu amaçla json çıktıları ürettik. Ama kazımanın sadece bunlarla sınırlı olmadığını anlamışsınızdır, şeklini değiştirerek daha farklı işler içinde kullanabilirsiniz.
+
+
+Okuduğunuz için teşekkürler :joy:
