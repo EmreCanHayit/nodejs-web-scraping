@@ -30,7 +30,7 @@ npm install axios jsdom --save
 Artık kodlama kısmına geçebiliriz. Bir tane javascript dosyası oluşturalım ismini herhangi bir şey yapabilirsiniz. Ben App.js olarak oluşturuyorum.
 
 ## Buradan sonra ilk önce mantığı anlatıp daha sonra örnek projeler ile pekiştirelim.
-```
+```javascript
 axios
     .get(url)
     .then(response => {
@@ -41,7 +41,7 @@ axios
     });
 ```
 axios ile bir istekte bulunduk ve web sitesinin cevabını düzenlemek için gönderiyoruz. Herhangi bir hata ihtimali için önlemimizi alıyoruz.
-```
+```javascript
 const getSelected = html => {
     const data = [],
     DOM = new JSDOM(html),
@@ -56,7 +56,7 @@ const getSelected = html => {
 Gelen parametre ile DOM üzerinde element seçimi yapıyoruz. Bu element istenilen bütün elemanları kapsamalıdır. Çünkü boşta kalan eleman olursa tekrar çalıştırma gerekir.
 
 querySelectorAll geriye bir dizi döndürdüğü için bu dizi üzerinde yeni eşleşmeler arayabilir veya kaydedebiliriz.
-```
+```javascript
 let outJSON = JSON.stringify(data);
 fs.writeFile('data.json', outJSON, (err) => {
     if(err) throw err;
@@ -68,7 +68,7 @@ JSON.stringify ile dizimizi JSON formatına çevirip, fs ile kaydediyoruz. Hata 
 ## Hadi bir kaç örnek yapalarak kodları daha iyi anlayalım.
 
 İlk örneğimiz ``currency.word`` üzerinden döviz kurlarını çekmek.
-```
+```javascript
 const axios = require('axios');
 const { JSDOM } = require('jsdom');
 const url = 'https://currency.world/exchange_rates/TRY';
@@ -93,8 +93,8 @@ const getSelected = html => {
     console.log(data);
 }
 ```
-Çıktımız
-```
+Çıktımız.
+```javascript
 [
   { name: 'USD', rate: '8.558' },
   { name: 'EUR', rate: '10.101' },
@@ -111,7 +111,7 @@ const getSelected = html => {
 ]
 ```
 İkinci örneğimiz ``accuweather.com`` üzerinden hava durumu çekmek.
-```
+```javascript
 const axios = require('axios');
 const { JSDOM } = require('jsdom');
 const fs = require('fs');
@@ -159,8 +159,17 @@ const getSelected = html => {
     console.log(data);
 }
 ```
-Çıktımız
-```
+Verileri düzenli hale getirmek için kesme ve regex kontrolü gerçekleştirdik.
+Düzenlenmeden Önce | Regex Sonrası | Kesme Sonrası
+----------|----------|----------
+/24°| - | 24°
+\n\t\t\t\tParlak güneş ışığı\n\t\t\t| Parlak güneş ışığı | -
+'\n' + '\t\t<\img alt="rain drop" class="precip-icon" src="/images/components/weather/daily-forecast-card-nfl/drop-icon.svg">\n' +'\t\t%0\n' +'\t'| %0 | -
+
+Bazı verilerin bu şekilde kötü işlenmiş olarak gelmesinin sebebi web site tasarımı zafiyetleri yüzünden meydana geliyor. 
+
+Çıktımız. bunu biraz kestim çok uzundu ^^
+```javascript
 [
   {
     "day": {
@@ -179,3 +188,7 @@ const getSelected = html => {
   .
 ]
 ```
+## Sonuç
+Her kaynağı istediğimiz şekile dönüştürerek kullanılabilir kaynağa dönüştürebilmek kazımanın asıl gücü. Size gelen veri ne kadar kötü ve kullanılmaz gibi gözüksede ``örnek 2`` üzerinde oynalamar yaparak işe yarar hale getirebilirsiniz.
+
+Bu makale üzerinde api desteği olmayan servisler ve web siteleri üzerine yoğunlaşarak kullanılabilir servisler elde etmeye çalıştık ve bu amaçla json çıktıları ürettik. Ama kazımanın sadece bunlarla sınırlı olmadığını anlamışsınızdır, şeklini değiştirerek daha farklı işler içinde kullanabilirsiniz.
