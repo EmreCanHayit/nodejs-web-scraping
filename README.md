@@ -2,7 +2,7 @@
 
 Kullanmak istediğiniz bir servisin api desteği bulunmuyordur veya bir web sayfası üzerindeki verileri kullanmak istediğiniz zaman resmi api desteğinin gelmesini beklemeyiz. Kazırız :D
 
-## Peki nedir bu kazımak ?
+## Peki nedir bu kazıma ?
 En genel anlamıyla bot diyebiliriz. İstenen veriyi çekerek belli bir formatta kullanmak için sakladığımız bir yapı.
 
 ## Nasıl ve neler yapacağız ?
