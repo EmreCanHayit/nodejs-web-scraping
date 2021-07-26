@@ -73,16 +73,19 @@ const axios = require('axios');
 const { JSDOM } = require('jsdom');
 const url = 'https://currency.world/exchange_rates/TRY';
 
-axios.get(url).then(response => {
-    getSelected(response.data);
-}).catch(error => {
-    console.log(error);
-})
+axios
+    .get(url)
+    .then(response => {
+        getSelected(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
 
 const getSelected = html => {
     const data = [],
-    dom = new JSDOM(html),
-    selectedAll = dom.window.document.querySelectorAll('.ratestable a');
+    DOM = new JSDOM(html),
+    selectedAll = DOM.window.document.querySelectorAll('.ratestable a');
 
     selectedAll.forEach(item => {
         data.push({
@@ -156,7 +159,6 @@ const getSelected = html => {
         if(err) throw err;
         console.log("Çıktı başarılı.");
     });
-    console.log(data);
 }
 ```
 Verileri düzenli hale getirmek için kesme ve regex kontrolü gerçekleştirdik.
@@ -189,6 +191,6 @@ Bazı verilerin bu şekilde kötü işlenmiş olarak gelmesinin sebebi web site 
 ]
 ```
 ## Sonuç
-Her kaynağı istediğimiz şekile dönüştürerek kullanılabilir kaynağa dönüştürebilmek kazımanın asıl gücü. Size gelen veri ne kadar kötü ve kullanılmaz gibi gözüksede ``örnek 2`` üzerinde oynalamar yaparak işe yarar hale getirebilirsiniz.
+Her kaynağı istediğimiz şekile dönüştürerek, kullanılabilir kaynağa dönüştürmek kazımanın asıl gücü. Size gelen veri ne kadar kötü ve kullanılmaz gibi gözüksede ``örnek 2`` üzerinde oynalamar yaparak işe yarar hale getirebilirsiniz.
 
 Bu makale üzerinde api desteği olmayan servisler ve web siteleri üzerine yoğunlaşarak kullanılabilir servisler elde etmeye çalıştık ve bu amaçla json çıktıları ürettik. Ama kazımanın sadece bunlarla sınırlı olmadığını anlamışsınızdır, şeklini değiştirerek daha farklı işler içinde kullanabilirsiniz.
