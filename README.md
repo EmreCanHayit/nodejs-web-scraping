@@ -36,8 +36,8 @@ axios
     .then(response => {
         getSelected(response.data); 
     })
-    .catch(error => {
-        console.log(error);
+    .catch(err => {
+        console.log(err);
     });
 ```
 axios ile bir istekte bulunduk ve web sitesinin cevabını düzenlemek için gönderiyoruz. Herhangi bir hata ihtimali için önlemimizi alıyoruz.
@@ -78,8 +78,8 @@ axios
     .then(response => {
         getSelected(response.data);
     })
-    .catch(error => {
-        console.log(error);
+    .catch(err => {
+        console.log(err);
     })
 
 const getSelected = html => {
@@ -129,8 +129,8 @@ axios
     .then(response => {
         getSelected(response.data); 
     })
-    .catch(error => {
-        console.log(error);
+    .catch(err => {
+        console.log(err);
     });
 
 const getSelected = html => {
