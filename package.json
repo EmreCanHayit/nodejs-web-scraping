@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-web-scraping",
+  "version": "1.0.0",
+  "description": "Kullanmak istediğiniz bir servisin api desteği bulunmuyordur veya bir web sayfası üzerindeki verileri kullanmak istediğiniz zaman resmi api desteğinin gelmesini beklemeyiz. Kazırız :D",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmreCanHayit/nodejs-web-scraping.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmreCanHayit/nodejs-web-scraping/issues"
+  },
+  "homepage": "https://github.com/EmreCanHayit/nodejs-web-scraping#readme"
+}
