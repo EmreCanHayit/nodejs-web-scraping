@@ -113,7 +113,7 @@ const getSelected = html => {
   { name: 'XAU', rate: '15382' }
 ]
 ```
-İkinci örneğimiz [``accuweather.com``](https:accuweather.com) üzerinden hava durumu çekmek.
+İkinci örneğimiz [``accuweather.com``](https://www.accuweather.com/) üzerinden hava durumu çekmek.
 ```javascript
 const axios = require('axios');
 const { JSDOM } = require('jsdom');
