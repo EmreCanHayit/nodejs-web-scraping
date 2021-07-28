@@ -2,7 +2,7 @@
   "name": "nodejs-web-scraping",
   "version": "1.0.0",
   "description": "Node.js ile web kazıma.",
-  "main": "index.js",
+  "main": "test_one.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
