@@ -67,7 +67,7 @@ JSON.stringify ile dizimizi JSON formatına çevirip, fs ile kaydediyoruz. Hata 
 
 ## Hadi bir kaç örnek yapalarak kodları daha iyi anlayalım.
 
-İlk örneğimiz ``currency.word`` üzerinden döviz kurlarını çekmek.
+İlk örneğimiz [``currency.word``](https://currency.world/) üzerinden döviz kurlarını çekmek.
 ```javascript
 const axios = require('axios');
 const { JSDOM } = require('jsdom');
